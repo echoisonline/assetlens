@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #393e41;
+}
+
+html {
+  font-family: "Nippo", sans-serif;
+}
+
+h1 {
+  font-family: "Array", sans-serif;
+  font-weight: 100;
+}
+
+nav {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+nav ul {
+  list-style-type: none;
+}
