@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/index.css";
+import SearchIcon from "../assets/search.svg";
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -46,10 +47,10 @@ const Search = () => {
   };
 
   return (
-    <div className="relative w-full h-[100px] text-[#EB7BC0]">
-      <div>
+    <div className="relative text-[#393E41] grid my-auto">
+      <div className="flex gap-2 !m-[5px_0_5px_20px]">
         <input
-          className=""
+          className="rounded-full relative bg-[#EBEBEB] border-1 border-solid border-[#393E41] !px-[10px] text-[16px] h-[30px] w-[140px]"
           type="text"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
@@ -57,18 +58,26 @@ const Search = () => {
           onFocus={() => setShowRecentSearches(true)}
           placeholder="Search..."
         />
-        <button onClick={handleSearch}>Search</button>
+        <button
+          onClick={handleSearch}
+          className="bg-none relative right-[36px] text-white px-4 py-2  h-[30px]"
+        >
+          <img className="h-[20px] " src={SearchIcon} />
+        </button>
       </div>
 
       {showRecentSearches && recentSearches.length > 0 && (
-        <div className="" onMouseLeave={() => setShowRecentSearches(false)}>
-          <div>
-            <span className="">Recent Searches</span>
-            <button onClick={clearRecentSearches}>Clear All</button>
-          </div>
+        <div
+          className="bg-[#EBEBEB] w-full flex flex-col relative top-[5px] rounded-[4px]"
+          onMouseLeave={() => setShowRecentSearches(false)}
+        >
           <ul className="">
             {recentSearches.map((value, index) => (
-              <li key={index} onClick={() => handleRecentSearchClick(value)}>
+              <li
+                className="flex !pl-[4px] items-center !h-[30px] hover:bg-[#5a6063] hover:text-[#EBEBEB] first:rounded-t-[3px] last:rounded-b-[3px]"
+                key={index}
+                onClick={() => handleRecentSearchClick(value)}
+              >
                 {value}
               </li>
             ))}

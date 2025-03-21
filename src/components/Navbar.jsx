@@ -1,17 +1,16 @@
 import React from "react";
 import Search from "./Search";
+import "../styles/Navbar.css";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav
-      className="bg-[#EBEBEB] text-[#393E41] rounded-full content-center m-[20px]
-    text-[24px]"
-    >
-      <ul className="h-[40px] grid grid-cols-[170px_1px_1fr] justify-items-center m-[0px]">
-        <li>
-          <a href="">
-            <h1 className="text-[34px] ">assetlens</h1>
-          </a>
+    <nav className="bg-[#EBEBEB] text-[#393E41] rounded-full text-[24px] w-fit !mt-[15px] !mx-auto">
+      <ul className="h-[40px] flex justify-items-center ">
+        <li className="h-[40px] flex items-center justify-center">
+          <NavLink to="/">
+            <h1 className="text-[26.625px] !mx-[20px]">assetlens</h1>
+          </NavLink>
         </li>
         <li>
           <a href="">
@@ -19,7 +18,7 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <div className="top-[6.125px] relative font-[400] text-[20px] my-auto">
+          <div className="font-[400] text-[20px] h-[40px] flex align-middle">
             <Search></Search>
           </div>
         </li>

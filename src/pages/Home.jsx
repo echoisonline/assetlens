@@ -1,12 +1,16 @@
 import Navbar from "../components/Navbar";
-import Search from "../components/Search";
-
 import React from "react";
+import Dasboard from "../components/Dasboard";
 
 function Home() {
   return (
     <>
-      <Navbar />
+      <div className="w-full flex mt-[5px] justify-center">
+        <Navbar />
+      </div>
+      <div>
+        <Dasboard />
+      </div>
     </>
   );
 }
